@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kieran</title>
+    <meta name="Profile of Kieran" content="Kieran, code-capable and carefully described in such brief document">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card-white">
+        <h1>
+          Hello world, this is Kieran!
+    </h1>
+    </div>
+          <div id="wrapper">
+              <div>
+                  <img src="https://avatars.githubusercontent.com/u/148545876?v=4" class="img-circle" alt="Titular Kieran" width="300px" height="150px" hidden />
+                  <img src="/images/Profile_alt1.jpg" width="300px" height="150px" class="img-circle" hidden />
+                  <img src="/images/Profile_alt2.jpg" width="300px" height="150px" class="img-circle" hidden />
+              </div>
+          </div>
+          <script type="text/javascript">
+            var currentImageIndex = -1,
+                maxImageIndex = 0,
+                images = [],
+                changeInterval = 2000;
+        
+            // prepares relevant variables to cycle throguh images
+            var setUp = function() {
+                images = document.images;
+                maxImageIndex = images.length;
+                currentImageIndex = 0;
+            };
+            var changeBanner = function() {
+          var i;
+    
+          // either re-set the index to 0 if the max length was reached or increase the index by 1
+          currentImageIndex = (currentImageIndex >= maxImageIndex - 1) ? 0 : currentImageIndex += 1;
+    
+          for (i = 0; i < maxImageIndex; i += 1) {
+              images[i].hidden = (i !== currentImageIndex);
+          }
+      };
+    
+      // a function which is triggered following the `load` event
+      window.onload = function() {
+          setUp();
+    
+          images[currentImageIndex].hidden = false; // show the first banner image;
+    
+          setInterval(changeBanner, changeInterval); // following a delay, keep changing the banner image by the specified interval
+      };
+    </script>
+    <div class="card-white">
+    <h3>
+      Who, or what, is Kieran?
+    </h3>
+    <p>
+      Kieran is the titular subject of this document, a recent inductee to the broad world of code and an aspiring web developer, beginning with this humble display.
+    </p>
+    </div>
+    <div class="card-white">
+    <h3>
+      Find me on Social Media!
+    </h3>
+    <a href="https://github.com/KieranLambe" target="_blank">
+      Github
+    </a>
+    <p>
+      Instagram: @ad_absurder
+    </p>
+    </div>
+    </div>
+  </body>
+</html>
